@@ -57,6 +57,6 @@ if (!$result) {
 
 echo "Hello $fname $lname. You have succesfully signed up with Username:[$username] and password:[$pw].<br/>";
 
-echo 'Proceed to <a href="loginform.php">Login</a>';
+echo 'Proceed to <a href="index.php">Login</a>';
 
 ?>
