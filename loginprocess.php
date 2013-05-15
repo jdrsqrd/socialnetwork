@@ -12,20 +12,10 @@
         alt="">
     </div>
     <div class="txt" align="center" id="content">
-        <?php 
-        session_start();
-        // echo "made it";
-        // echo $_POST['username'];
-        // echo "<br/>\n";
-        // echo $_POST['pw'];
-        // echo "<br/>\n";
-        // replace with a database query to check the user credentials match
+        <?php session_start();
         
         $username = $_POST['username'];
         $pw = $_POST['pw'];
-        // $fname = $_POST['fname'];
-        // $lname = $_POST['lname'];
-        
         
         $conn = mysql_connect("localhost", "jdr2", "S3Cr3T.228");
         
@@ -40,7 +30,7 @@
         }
         
         //querey to check username with matching password
-        $sql = "SELECT username FROM User WHERE username='$username' AND pw='$pw'";
+        $sql = "SELECT * FROM User WHERE username='$username' AND pw='$pw'";
         
         
         //runnign the querey on DB
@@ -58,16 +48,33 @@
             exit;
         }
         
-        echo "Sccessful Login";
-        
+        echo "Sccessful Login</br>";
+        $wait=0;
         $row = mysql_fetch_assoc($result);
-        //variables from before could be used
+        //variables from before could be used 
         $_SESSION['username'] = $row["username"];
         $_SESSION['currentUserID'] = $row["userID"];
         
-        mysql_free_result($result);
+        $test = $row["userID"];
         
-        echo 'Proceed to <a href="home.php">Home</a>';
+        $ntest =$_SESSION['username'];
+        //$test =  $_SESSION['currentUserID'];
+        
+        echo "$test</br>";
+        
+        //$ready=0;
+        
+        mysql_free_result($result);
+        $wait=1;
+        
+        
+        //waits to make sure that the session has been established
+        //then redirects to home page
+        if($wait=1){
+            header("Location: http://student.seas.gwu.edu/~jdr2/home.php");
+        }
+        
+        //echo 'Proceed to <a href="home.php">Home</a>';
         
         ?>
     </div>

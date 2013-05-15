@@ -1,4 +1,13 @@
-<?php session_start(); ?>
+<?php session_start(); 
+
+//if someone is logged in, redirect them to the home page
+$uID = $_SESSION['currentUserID'];
+
+if($_SESSION['currentUserID'] !=""){
+	header("Location: http://student.seas.gwu.edu/~jdr2/home.php");
+}
+
+?>
 
 <html>
 	<head>

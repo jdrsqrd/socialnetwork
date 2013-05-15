@@ -8,6 +8,12 @@
 	color:black;
 }
 
+.stxt{
+	font-family: Tahoma, Geneva, sans-serif;
+	font-size: 14px;
+	color:black;
+}
+
 .desc{
 	max-width: 500px;
 	padding-left: 50%;
@@ -19,4 +25,47 @@ h1
 	font-family: Tahoma, Geneva, sans-serif;
 	color:black;
 	text-shadow: 0px 0px 2px #000;
+}
+
+/*table formating*/
+table,td,th{
+	font-family: Tahoma, Geneva, sans-serif;
+	border: 1px solid black;
+	border-radius: 5px;
+}
+
+.frd{
+	min-width: 150px;
+}
+
+.msg{
+	min-width: 425px;
+	
+}
+
+.dat{
+	min-width: 75px;
+}
+
+.postdiv{
+	width: 650px;
+	padding-left: 50%;
+	margin-left: -325px;
+}
+
+.posts{
+	min-width: 400px;
+}
+
+/*end table formating*/
+
+/*posting*/
+.submsg{
+	min-width:350px;
+}
+
+/*profile data*/
+.profile{
+	min-height: 300px;
+	min-width: 300px;
 }
